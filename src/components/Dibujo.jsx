@@ -34,7 +34,7 @@ export default class Canvas extends React.Component {
   render() {
     return (
       <div>
-        <p className="text-base font-bold">Insertar firma</p>
+        <p className="text-base font-bold">Drawing App</p>
         {this.strokeColor === 0 && (
           <p className="text-base font-bold">Firma guardada!</p>
         )}
@@ -98,9 +98,63 @@ border-ihnerit border p-1"
             >
               yellow
             </button>
+            <button
+              style={{ backgroundColor: "#FF36F9" }}
+              onClick={() => {
+                this.changeStrokeColor("#FF36F9");
+              }}
+            >
+              Rosa
+            </button>
+            <button
+              onClick={() => {
+                this.canvas.current.undo();
+              }}
+            >
+              Undo
+            </button>
+            <button
+              onClick={() => {
+                this.canvas.current.redo();
+              }}
+            >
+              redo
+            </button>
           </div>
         </div>
-        <div className="flex"></div>{" "}
+        <div className="flex">
+          <button
+            onClick={() => {
+              this.changeStrokeWidth(2);
+            }}
+          >
+            pincel Pequeño
+          </button>
+          <button
+            onClick={() => {
+              this.changeStrokeWidth(4);
+            }}
+          >
+            pincel Mediano
+          </button>
+          <button
+            onClick={() => {
+              this.changeStrokeWidth(6);
+            }}
+          >
+            pincel Grande
+          </button>
+          <button
+            onClick={() => {
+              // console.log(this.canvas)
+              this.canvas.current.exportPaths().then((r) => {
+                console.log(r);
+              });
+            }}
+          >
+            descargar
+          </button>
+        </div>
       </div>
     );
   }
