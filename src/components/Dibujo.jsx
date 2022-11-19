@@ -10,6 +10,7 @@ export default class Canvas extends React.Component {
       strokeColor: "black",
       canvasColor: "white",
       strokeWidth: 2,
+      eraserWidth: 10,
     };
   }
 
@@ -65,47 +66,50 @@ border-ihnerit border p-1"
           >
             Reiniciar lienzo
           </button>
-          <div className="flex justify-center">
+          <div className="flex justify-center ">
             <button
+              className="rounded-full border-2 border-black "
               style={{ backgroundColor: "red" }}
               onClick={() => {
                 this.changeStrokeColor("red");
               }}
-            >
-              rojo
-            </button>
+            ></button>
             <button
+              className="rounded-full border-2 border-black "
               style={{ backgroundColor: "green" }}
               onClick={() => {
                 this.changeStrokeColor("green");
               }}
-            >
-              verde
-            </button>
+            ></button>
             <button
+              className="rounded-full border-2 border-black "
               style={{ backgroundColor: "blue" }}
               onClick={() => {
                 this.changeStrokeColor("blue");
               }}
-            >
-              azul
-            </button>
+            ></button>
             <button
+              className="rounded-full border-2 border-black "
               style={{ backgroundColor: "yellow" }}
               onClick={() => {
                 this.changeStrokeColor("yellow");
               }}
-            >
-              yellow
-            </button>
+            ></button>
             <button
+              className="rounded-full border-2 border-black "
               style={{ backgroundColor: "#FF36F9" }}
               onClick={() => {
                 this.changeStrokeColor("#FF36F9");
               }}
-            >
-              Rosa
-            </button>
+            ></button>
+
+            <input
+              type="color"
+              onChange={() => {
+                this.changeStrokeColor(this.current.type);
+              }}
+            />
+
             <button
               onClick={() => {
                 this.canvas.current.undo();
@@ -144,6 +148,21 @@ border-ihnerit border p-1"
           >
             pincel Grande
           </button>
+          <button
+            onClick={() => {
+              this.canvas.current.eraseMode(false);
+            }}
+          >
+            Modo Pincel
+          </button>
+          <button
+            onClick={() => {
+              this.canvas.current.eraseMode(true);
+            }}
+          >
+            Modo Borrar
+          </button>
+
           <button
             onClick={() => {
               // console.log(this.canvas)
