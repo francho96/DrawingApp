@@ -9,8 +9,8 @@ https://user-images.githubusercontent.com/71195484/227730692-45bf385a-df65-45f1-
 
 
 <br/>
-you can try the component <a href="drawingappxd.netlify.app" >pressing here!</a>
+you can try the component <a href="drawingappxd.netlify.app" target="_blank" >pressing here!</a>
 
 
 
-## <a href="drawingappxd.netlify.app"> drawingappxd.netlify.app </a>
+## <a href="drawingappxd.netlify.app" target="_blank"> drawingappxd.netlify.app </a>
